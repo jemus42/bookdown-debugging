@@ -10,12 +10,12 @@ cd $FONT_HOME/adobe
 echo "installing adobe fonts to $FONT_HOME/adobe"
 
 wget https://github.com/adobe-fonts/source-code-pro/archive/2.030R-ro/1.050R-it.zip
-unzip -o 1.050R-it.zip "*.otf"
+unzip -n 1.050R-it.zip "*.otf"
 
 wget https://github.com/adobe-fonts/source-serif-pro/archive/2.000R.zip
-unzip -o 2.000R.zip "*.otf"
+unzip -n 2.000R.zip "*.otf"
 
 wget https://github.com/adobe-fonts/source-sans-pro/archive/2.020R-ro/1.075R-it.zip
-unzip -o 1.075R-it.zip "*.otf"
+unzip -n 1.075R-it.zip "*.otf"
 
 fc-cache -f -v
