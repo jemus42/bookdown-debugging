@@ -1,7 +1,7 @@
 --- 
 title: "Bookdown, Travis, Fonts"
 author: "Lukas Burk"
-date: "Stand: `r withr::with_locale(c('LC_TIME' = 'de_DE'), format(Sys.time(), '%d. %B %Y %H:%M Uhr (%Z)', tz = 'Europe/Berlin'))`"
+date: "Stand: `r withr::with_locale(c('LC_TIME' = 'de_DE'), format(Sys.time(), '%d. %B %Y %H:%M Uhr', tz = 'Europe/Berlin'))`"
 lang: de-DE
 site: bookdown::bookdown_site
 url: ''
