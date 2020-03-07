@@ -1,6 +1,6 @@
 bookdown::gitbook:
   df_print: kable
-  css: style.css
+  css: includes/style.css
   toc_depth: 4
   split_by: section
   config:
@@ -8,7 +8,7 @@ bookdown::gitbook:
       collapse: subsection
       scroll_highlight: yes
       before: |
-        <li><a href="./">Hello there</a></li>
+        <li><a href="./">A bookdown debugging project</a></li>
       after: |
         <li><a href="https://github.com/rstudio/bookdown" target="blank">Built with bookdown</a></li>
     download: ["pdf", "tex"]
@@ -18,7 +18,7 @@ bookdown::gitbook:
   mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_HTML"
 bookdown::pdf_book:
   includes:
-    in_header: preamble.tex
+    in_header: includes/preamble.tex
   latex_engine: xelatex
   citation_package: natbib
   keep_tex: yes
