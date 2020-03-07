@@ -1,0 +1,9 @@
+Type: Book
+Package: bookdown-debugging
+Title: Placeholder file for travis. Project dependencies managed via renv
+Version: 0.0.1
+License: MIT + file LICENSE
+Imports:
+    bookdown,
+    tinytex
+Encoding: UTF-8

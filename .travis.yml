@@ -35,8 +35,9 @@ before_install:
       wget https://github.com/bBoxType/FiraSans/archive/master.zip -O $HOME/.local/share/fonts/fira.zip
       unzip $HOME/.local/share/fonts/fira.zip '*.ttf' -d $HOME/.local/share/fonts/fira
     fi
+  - $TRAVIS_BUILD_DIR/bin/get_adobe_fonts.sh
   - |
-    # 3. Copy fontconfig for possibly maybe xelatex font issue with spaces in font names
+    # Copy fontconfig for possibly maybe xelatex font issue with spaces in font names
     cp $HOME/.TinyTeX/texmf-var/fonts/conf/texlive-fontconfig.conf ~/.fonts.conf
   - |
     # 4. Update font cache for previously installed fonts (+ list fonts for debugging)
