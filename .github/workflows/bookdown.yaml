@@ -45,8 +45,10 @@ jobs:
           R -e 'install.packages("renv")'
           R -e 'renv::restore()'
 
-      - name: Install system dependencies + fonts
+      - name: Install tinytex
         uses: r-lib/actions/setup-tinytex@v1
+
+      - name: Install system dependencies + fonts
         run: |
           brew install cairo
           brew cask install xquartz
