@@ -40,7 +40,7 @@ jobs:
 
       - name: Install system dependencies + fonts
         run: |
-          brew install cairo
+          brew install cairo xquartz
           brew tap homebrew/cask-fonts
           brew cask install font-source-code-pro
           brew cask install font-source-sans-pro
