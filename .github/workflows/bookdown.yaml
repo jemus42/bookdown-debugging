@@ -28,6 +28,13 @@ jobs:
           key: r-${{ hashFiles('renv.lock') }}
           restore-keys: r-
 
+      - name: Cache TinyTex
+        uses: actions/cache@v1
+        with:
+          path: $HOME/Library/TinyTex
+          key: tinytex-${{ hashFiles("$HOME/Library/TinyTeX/texmf.cnf"") }}
+          restore-keys: tinytex-
+
       - name: Cache bookdown results
         uses: actions/cache@v1
         with:
@@ -48,6 +55,8 @@ jobs:
           brew cask install font-source-code-pro
           brew cask install font-source-sans-pro
           brew cask install font-source-serif-pro
+          fc-cache -fv
+          fc-list|grep Source
 
       - name: Build GitBook
         run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
