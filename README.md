@@ -1,13 +1,17 @@
 # bookdown-debugging
 
+![Travis (.org)](https://img.shields.io/travis/jemus42/bookdown-debugging?logo=travis)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7a277574-aa48-44e2-be9b-c4a6bbc5f8db/deploy-status)](https://app.netlify.com/sites/jemus42-bookdown-debugging/deploys)
+
 This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown).   
 This repository tests various thing I find myself wanting to do, but don't want to have to work out with actual projects each time.  
 
 This project "demonstrates":
 
 - Using `renv` with bookdown and CI/CD providers
-- Building via travis CI and deploying via SSH to a server
-- Building via GitHub actions and deploying to netlify
+- Building via travis CI and deploying via SSH to a server (see `.travis.yml`)
+  - Bonus feature: Installing Adobe Source (Serif|Sans|Code) Pro fonts for the ODF output (`bin/get_adobe_fonts.sh`)
+- Building via GitHub actions and deploying to netlify (see `.github/workflows/bookdown.yaml`)
 
 Output:
 - Server deplyoment: https://bookdown-debug.tadaa-data.de/
