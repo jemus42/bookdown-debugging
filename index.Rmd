@@ -11,8 +11,8 @@ biblio-style: apalike
 link-citations: yes
 colorlinks: true
 papersize: a4
-mainfont: "Source Serif Pro" # "TeX Gyre Pagella"
-sansfont: "Source Sans Pro" # "TeX Gyre Heros"
+mainfont: "Source Serif Pro"
+sansfont: "Source Sans Pro"
 monofont: "Source Code Pro"
 monofontoptions:
   - Mapping=tex-ansi

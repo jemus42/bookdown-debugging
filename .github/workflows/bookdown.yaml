@@ -55,7 +55,8 @@ jobs:
           brew cask install font-source-sans-pro
           brew cask install font-source-serif-pro
           fc-cache -fv
-          fc-list|grep Source
+          # fc-list|grep Source
+          fc-match source
 
       - name: Build GitBook
         run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
