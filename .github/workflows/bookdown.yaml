@@ -32,7 +32,7 @@ jobs:
         uses: actions/cache@v1
         with:
           path: $HOME/Library/TinyTex
-          key: tinytex-${{ hashFiles("$HOME/Library/TinyTeX/texmf.cnf") }}
+          key: tinytex-${{ hashFiles('$HOME/Library/TinyTeX/texmf.cnf') }}
           restore-keys: tinytex-
 
       - name: Cache bookdown results
