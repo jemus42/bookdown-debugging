@@ -9,9 +9,18 @@ library(ggplot2)
 
 p <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species, fill = Species)) +
    geom_boxplot(alpha = .75, show.legend = FALSE) +
-   scale_color_brewer(palette = "Dark2", aesthetics = c("color", "fill"))
+   scale_color_brewer(palette = "Dark2", aesthetics = c("color", "fill")) +
+   labs(
+      title = "Yet another iris plot",
+      subtitle = "At least make it kind of neat to look at maybe?",
+      x = "I should google those species",
+      y = "*Googleing 'Sepal'*",
+      caption = "Hi!"
+   )
 
 p + theme_minimal()
+
+p + theme_minimal(base_family = "Source Sans Pro")
 ```
 
 
