@@ -1,4 +1,17 @@
-This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown). Please see the page "Get Started" at https://bookdown.org/home/about/ for how to compile this example.
+# bookdown-debugging
+
+This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown).   
+This repository tests various thing I find myself wanting to do, but don't want to have to work out with actual projects each time.  
+
+This project "demonstrates":
+
+- Using `renv` with bookdown and CI/CD providers
+- Building via travis CI and deploying via SSH to a server
+- Building via GitHub actions and deploying to netlify
+
+Output:
+- Server deplyoment: https://bookdown-debug.tadaa-data.de/
+- Netlify: https://jemus42-bookdown-debugging.netlify.app/
 
 ## `DESCRIPTION`
 

@@ -38,8 +38,11 @@ jobs:
           R -e 'install.packages("renv")'
           R -e 'renv::restore()'
 
-      - name: Build site
-        run: Rscript -e 'bookdown::render_book("index.Rmd", quiet = TRUE)'
+      - name: Build GitBook
+        run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
+
+      - name: Build PDF
+        run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book", quiet = TRUE)'
 
       - name: Install npm
         uses: actions/setup-node@v1

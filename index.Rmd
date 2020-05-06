@@ -20,6 +20,7 @@ monofontoptions:
 mathfont: "Asana Math"
 always_allow_html: yes
 links-as-notes: yes
+github-repo: "jemus42/bookdown-debugging"
 ---
 
 # Prerequisites

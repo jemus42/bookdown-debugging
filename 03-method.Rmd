@@ -1,8 +1,22 @@
 # Methods
 
-Some example math:
+## Plotting
 
-## Inline and simple display
+With FONTS!
+
+```{r plotting-1, fig.cap="A plot."}
+library(ggplot2)
+
+p <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species, fill = Species)) +
+   geom_boxplot(alpha = .75, show.legend = FALSE) +
+   scale_color_brewer(palette = "Dark2", aesthetics = c("color", "fill"))
+
+p + theme_minimal()
+```
+
+
+
+## Math
 
 Using one dollar sign: $\beta = (X^T X)^{-1} X^T Y$  
 
