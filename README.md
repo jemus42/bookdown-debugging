@@ -33,13 +33,20 @@ renv::init()
 renv::snapshot()
 ```
 
-As long as `renv::restore()` is called in `.travis.yml` and caching is set up (optional, but recommend), this should work just fine.
+As long as `renv::restore()` is called in `.travis.yml` (/ whatever CI config) and caching is set up (optional, but recommended), this should work just fine.
 
 ## Deployment
 
 ### GitHub Pages
 
 Add your `$GITHUB_PAT` to travis by whatever means you're used to, the rest is handled via `.travis.yml`.
+
+### Netlify (WIP)
+
+Based on [this blog post](https://www.hvitfeldt.me/blog/bookdown-netlify-github-actions/) and
+using the GitHub action for bookdown as a basis (`usethis::use_github_action("bookdown")`).
+
+It works fine for HTML (GitBook) output for now, but PDF output and custom fonts are WIP.
 
 ### Script deployment via `rsync` / `ssh`
 

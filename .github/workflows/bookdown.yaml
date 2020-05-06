@@ -8,6 +8,8 @@ jobs:
   build:
     runs-on: macOS-latest
     steps:
+      - uses: r-lib/actions/setup-tinytex@v1
+
       - name: Checkout repo
         uses: actions/checkout@v2
 
