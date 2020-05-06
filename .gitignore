@@ -6,3 +6,7 @@
 # Book output
 _book
 _bookdown_files
+
+bookdown-debugging.log
+bookdown-debugging.pdf
+bookdown-debugging.tex

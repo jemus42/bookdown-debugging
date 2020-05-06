@@ -11,8 +11,8 @@ cli_h1("{format(Sys.time(), '%b. %d, %T')}")
 
 # Cleanup ----
 cli_alert_info("Removing previously built output")
-# if (fs::dir_exists("poisson-regression"))  fs::dir_delete("poisson-regression")
-if (fs::file_exists("poisson-regression.Rmd")) fs::file_delete("poisson-regression.Rmd")
+
+if (fs::file_exists("bookdown-debugging.Rmd")) fs::file_delete("bookdown-debugging.Rmd")
 
 cli_h2("Rendering documents")
 cli_div(id = "list", theme = list(ol = list("margin-left" = 1)))
