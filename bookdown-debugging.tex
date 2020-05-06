@@ -129,7 +129,7 @@
 
 \title{Bookdown, Travis, Fonts}
 \author{Lukas Burk}
-\date{Stand: 07. May 2020 00:21 Uhr}
+\date{Stand: 07. May 2020 00:36 Uhr}
 
 \begin{document}
 \maketitle
@@ -237,10 +237,31 @@ Here is a review of existing methods.
 \hypertarget{methods}{%
 \section{Methods}\label{methods}}
 
-Some example math:
+\hypertarget{plotting}{%
+\subsection{Plotting}\label{plotting}}
 
-\hypertarget{inline-and-simple-display}{%
-\subsection{Inline and simple display}\label{inline-and-simple-display}}
+With FONTS!
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(ggplot2)}
+
+\NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(iris, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Species, }\DataTypeTok{y =}\NormalTok{ Sepal.Length, }\DataTypeTok{color =}\NormalTok{ Species, }\DataTypeTok{fill =}\NormalTok{ Species)) }\OperatorTok{+}
+\StringTok{   }\KeywordTok{geom_boxplot}\NormalTok{(}\DataTypeTok{alpha =} \FloatTok{.75}\NormalTok{, }\DataTypeTok{show.legend =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{+}
+\StringTok{   }\KeywordTok{scale_color_brewer}\NormalTok{(}\DataTypeTok{palette =} \StringTok{"Dark2"}\NormalTok{, }\DataTypeTok{aesthetics =} \KeywordTok{c}\NormalTok{(}\StringTok{"color"}\NormalTok{, }\StringTok{"fill"}\NormalTok{))}
+
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{bookdown-debugging_files/figure-latex/plotting-1-1.pdf}
+\caption{\label{fig:plotting-1}A plot.}
+\end{figure}
+
+\hypertarget{math}{%
+\subsection{Math}\label{math}}
 
 Using one dollar sign: \(\beta = (X^T X)^{-1} X^T Y\)
 
