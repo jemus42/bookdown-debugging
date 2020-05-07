@@ -17,7 +17,7 @@ This repository tests various thing I find myself wanting to do, but don't want 
 
 This project "demonstrates":
 
-- Using `renv` with bookdown and CI/CD providers
+- Using `renv` with bookdown and CI/CD providers [see also](https://rstudio.github.io/renv/articles/ci.html)
 - Building via travis CI and deploying via SSH to a server (see `.travis.yml`)
   - Bonus feature: Installing Adobe Source (Serif|Sans|Code) Pro fonts for the PDF output (`bin/get_adobe_fonts.sh`)
 - Building via GitHub actions and deploying to netlify (see `.github/workflows/bookdown.yaml`)
