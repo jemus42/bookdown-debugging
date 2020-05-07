@@ -25,17 +25,24 @@ p <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species, fill = Spe
    scale_color_brewer(palette = "Dark2", aesthetics = c("color", "fill")) +
    labs(
       title = "Yet another iris plot",
-      subtitle = "At least make it kind of neat to look at maybe?",
       x = "I should google those species",
       y = "*Googleing 'Sepal'*",
       caption = "Hi!"
    )
 
-p + theme_minimal()
+p + theme_minimal() +
+   labs(subtitle = "Whatever this default font is")
 
-p + theme_minimal(base_family = "Source Sans Pro")
+p + theme_minimal(base_family = "Source Sans Pro") +
+   labs(subtitle = "Using Source Sans Pro")
 
-p + theme_minimal(base_family = "Roboto Condensed")
+p + theme_minimal(base_family = "Roboto Condensed") +
+   labs(subtitle = "Using Roboto Condense")
+
+library(hrbrthemes)
+
+p + theme_ipsum_rc() +
+   labs(subtitle = "Using hrbrthemes::theme_ipsum_rc()")
 
 ```
 
@@ -50,8 +57,10 @@ $$\beta = (X^T X)^{-1} X^T Y$$
 
 ### Using environments
 
+Below should be a set of equations using an `align` environment. If not, I still don't understand MathJax.
+
 \begin{align}
-\mathbb{E}( \widehat{\boldsymbol{\beta}}) 
+\mathbb{E}(\widehat{\boldsymbol{\beta}}) 
 &= \mathbb{E}\left( \left(\boldsymbol{X}^T \boldsymbol{X}\right)^{-1} \boldsymbol{X}^T \boldsymbol{Y} \right) \\
 &= \mathbb{E}\left( \left(\boldsymbol{X}^T \boldsymbol{X}\right)^{-1} \boldsymbol{X}^T \left(\boldsymbol{X} \boldsymbol{\beta}+ \varepsilon \right) \right) \\
 &= \mathbb{E}\left( 
