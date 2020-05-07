@@ -22,13 +22,13 @@ This project "demonstrates":
   - Bonus feature: Installing Adobe Source (Serif|Sans|Code) Pro fonts for the PDF output (`bin/get_adobe_fonts.sh`)
 - Building via GitHub actions and deploying to netlify (see `.github/workflows/bookdown.yaml`)
 
-## `DESCRIPTION`
+## The `DESCRIPTION` file
 
 This is more of a dummy file, but it's required for travis to recognize this as an R project.  
 The `Imports:` field normally is used for dependency management, but since `renv` is used, this isn't really necessary.  
 It should also be noted that `renv` bootstraps itself via `.Rprofile`, so `renv` doesn't need to be installed explicitly before `renv::restore` is called.
 
-## renv
+## Using `renv` for package management
 
 Set up `renv` and use as normal.
 
@@ -38,7 +38,9 @@ renv::init()
 renv::snapshot()
 ```
 
-As long as `renv::restore()` is called in `.travis.yml` (/ whatever CI config) and caching is set up (optional, but recommended), this should work just fine.
+As long as `renv::restore()` is called in `.travis.yml` (/ whatever CI config) and caching is set up (optional, but recommended), this should work just fine.  
+Some dependencies might not be picked up automatically, like `ragg` which is used only by setting `dev = ragg_png` in `_output.yml` for `bookdown::gitbook`.  
+I "solve" this by just calling `library(ragg)` explicitly, because `renv::record()` is more annoying.
 
 ## Deployment
 
@@ -74,4 +76,4 @@ rm -f deploy_rsa deploy_rsa.pub
 git add deploy_rsa.enc .travis.yml
 ```
 
-The corresponding lines in `.travis.yml` are added by `travis`, but will have to me moved to the `before_deploy` step in `.travis.yml` including the `ssh-agent` step etc.
+The corresponding lines in `.travis.yml` are added by `travis`, but will have to be moved to the `before_deploy` step in `.travis.yml` including the `ssh-agent` step etc.

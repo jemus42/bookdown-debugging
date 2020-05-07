@@ -1,5 +1,5 @@
 --- 
-title: "Bookdown, Travis, Fonts"
+title: "Bookdown Deployment Experiments"
 author: "Lukas Burk"
 date: "Stand: `r withr::with_locale(c('LC_TIME' = 'de_DE'), format(Sys.time(), '%d. %B %Y %H:%M Uhr', tz = 'Europe/Berlin'))`"
 lang: de-DE
