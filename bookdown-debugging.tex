@@ -129,7 +129,7 @@
 
 \title{Bookdown, Travis, Fonts}
 \author{Lukas Burk}
-\date{Stand: 07. May 2020 01:53 Uhr}
+\date{Stand: 07. May 2020 02:01 Uhr}
 
 \begin{document}
 \maketitle
@@ -248,7 +248,14 @@ With FONTS!
 
 \NormalTok{p <-}\StringTok{ }\KeywordTok{ggplot}\NormalTok{(iris, }\KeywordTok{aes}\NormalTok{(}\DataTypeTok{x =}\NormalTok{ Species, }\DataTypeTok{y =}\NormalTok{ Sepal.Length, }\DataTypeTok{color =}\NormalTok{ Species, }\DataTypeTok{fill =}\NormalTok{ Species)) }\OperatorTok{+}
 \StringTok{   }\KeywordTok{geom_boxplot}\NormalTok{(}\DataTypeTok{alpha =} \FloatTok{.75}\NormalTok{, }\DataTypeTok{show.legend =} \OtherTok{FALSE}\NormalTok{) }\OperatorTok{+}
-\StringTok{   }\KeywordTok{scale_color_brewer}\NormalTok{(}\DataTypeTok{palette =} \StringTok{"Dark2"}\NormalTok{, }\DataTypeTok{aesthetics =} \KeywordTok{c}\NormalTok{(}\StringTok{"color"}\NormalTok{, }\StringTok{"fill"}\NormalTok{))}
+\StringTok{   }\KeywordTok{scale_color_brewer}\NormalTok{(}\DataTypeTok{palette =} \StringTok{"Dark2"}\NormalTok{, }\DataTypeTok{aesthetics =} \KeywordTok{c}\NormalTok{(}\StringTok{"color"}\NormalTok{, }\StringTok{"fill"}\NormalTok{)) }\OperatorTok{+}
+\StringTok{   }\KeywordTok{labs}\NormalTok{(}
+      \DataTypeTok{title =} \StringTok{"Yet another iris plot"}\NormalTok{,}
+      \DataTypeTok{subtitle =} \StringTok{"At least make it kind of neat to look at maybe?"}\NormalTok{,}
+      \DataTypeTok{x =} \StringTok{"I should google those species"}\NormalTok{,}
+      \DataTypeTok{y =} \StringTok{"*Googleing 'Sepal'*"}\NormalTok{,}
+      \DataTypeTok{caption =} \StringTok{"Hi!"}
+\NormalTok{   )}
 
 \NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{()}
 \end{Highlighting}
@@ -257,7 +264,19 @@ With FONTS!
 \begin{figure}
 \centering
 \includegraphics{bookdown-debugging_files/figure-latex/plotting-1-1.pdf}
-\caption{\label{fig:plotting-1}A plot.}
+\caption{\label{fig:plotting-11}A plot.}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{(}\DataTypeTok{base_family =} \StringTok{"Source Sans Pro"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{bookdown-debugging_files/figure-latex/plotting-1-2.pdf}
+\caption{\label{fig:plotting-12}A plot.}
 \end{figure}
 
 \hypertarget{math}{%
