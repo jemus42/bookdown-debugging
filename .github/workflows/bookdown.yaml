@@ -74,8 +74,8 @@ jobs:
       - name: Build GitBook
         run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
 
-      - name: Build PDF
-        run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book", quiet = TRUE)'
+      # - name: Build PDF
+      #   run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book", quiet = TRUE)'
 
       - name: Install npm
         uses: actions/setup-node@v1
