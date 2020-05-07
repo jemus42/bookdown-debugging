@@ -24,7 +24,6 @@ p + theme_minimal(base_family = "Source Sans Pro")
 ```
 
 
-
 ## Math
 
 Using one dollar sign: $\beta = (X^T X)^{-1} X^T Y$  
@@ -33,7 +32,7 @@ Display style with two dollar signs:
 
 $$\beta = (X^T X)^{-1} X^T Y$$
 
-## Using environments
+### Using environments
 
 \begin{align}
 \mathbb{E}( \widehat{\boldsymbol{\beta}}) 

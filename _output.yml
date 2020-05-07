@@ -2,7 +2,7 @@ bookdown::gitbook:
   df_print: kable
   css: includes/style.css
   toc_depth: 4
-  split_by: section
+  split_by: chapter
   config:
     toc:
       collapse: subsection
@@ -15,7 +15,6 @@ bookdown::gitbook:
     sharing:
       facebook: no
       twitter: no
-  mathjax: "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.6/MathJax.js?config=TeX-AMS_HTML"
 bookdown::pdf_book:
   includes:
     in_header: includes/preamble.tex
