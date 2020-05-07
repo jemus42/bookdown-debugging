@@ -8,9 +8,9 @@ This repository tests various thing I find myself wanting to do, but don't want 
 
 | CI Provider    | Deployment Target    | GitBook | PDF | Output                                          |
 |----------------|----------------------|---------|-----|-------------------------------------------------|
-| [Travis CI][travis-link]      | Netlify              | ✔️       | ❌   | https://jemus42-bookdown-debugging.netlify.app/ |
+| [GitHub Actions][gh-actions-link]      | Netlify              | ✔️       | ❌   | https://jemus42-bookdown-debugging.netlify.app/ |
 | [Travis CI][travis-link]      | GitHub Pages              | ✔️       | ✔️  | https://jemus42.github.io/bookdown-debugging/ |
-| [GitHub Actions][gh-actions-link] | Server / ssh + rsync | ✔️       | ✔️   | https://bookdown-debug.tadaa-data.de/           |
+| [Travis CI][travis-link] | Server / ssh + rsync | ✔️       | ✔️   | https://bookdown-debug.tadaa-data.de/           |
 
 [travis-link]: https://travis-ci.org/github/jemus42/bookdown-debugging
 [gh-actions-link]: https://github.com/jemus42/bookdown-debugging/actions
