@@ -12,7 +12,7 @@ loadfonts()
 
 fonttab <- fonttable()
 
-fonttab <- fonttab[grepl("Source", fonttab$FamilyName), c("FullName", "FamilyName", "FontName", "fontfile")]
+fonttab <- fonttab[c("FullName", "FamilyName", "FontName", "fontfile")]
 
 knitr::kable(fonttab, booktabs = TRUE, caption = "Matching fonts")
 ```
