@@ -17,7 +17,7 @@ monofont: "Source Code Pro"
 monofontoptions:
   - Mapping=tex-ansi
   - Scale=0.8
-mathfont: "Asana Math"
+#mathfont: "Asana Math"
 always_allow_html: yes
 links-as-notes: yes
 github-repo: "jemus42/bookdown-debugging"
