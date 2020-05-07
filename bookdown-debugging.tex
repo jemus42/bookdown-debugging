@@ -129,7 +129,7 @@
 
 \title{Bookdown, Travis, Fonts}
 \author{Lukas Burk}
-\date{Stand: 07. May 2020 03:50 Uhr}
+\date{Stand: 07. May 2020 04:05 Uhr}
 
 \begin{document}
 \maketitle
@@ -281,13 +281,13 @@ With FONTS!
 \StringTok{   }\KeywordTok{scale_color_brewer}\NormalTok{(}\DataTypeTok{palette =} \StringTok{"Dark2"}\NormalTok{, }\DataTypeTok{aesthetics =} \KeywordTok{c}\NormalTok{(}\StringTok{"color"}\NormalTok{, }\StringTok{"fill"}\NormalTok{)) }\OperatorTok{+}
 \StringTok{   }\KeywordTok{labs}\NormalTok{(}
       \DataTypeTok{title =} \StringTok{"Yet another iris plot"}\NormalTok{,}
-      \DataTypeTok{subtitle =} \StringTok{"At least make it kind of neat to look at maybe?"}\NormalTok{,}
       \DataTypeTok{x =} \StringTok{"I should google those species"}\NormalTok{,}
       \DataTypeTok{y =} \StringTok{"*Googleing 'Sepal'*"}\NormalTok{,}
       \DataTypeTok{caption =} \StringTok{"Hi!"}
 \NormalTok{   )}
 
-\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{()}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{() }\OperatorTok{+}
+\StringTok{   }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{subtitle =} \StringTok{"Whatever this default font is"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -299,7 +299,8 @@ With FONTS!
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{(}\DataTypeTok{base_family =} \StringTok{"Source Sans Pro"}\NormalTok{)}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{(}\DataTypeTok{base_family =} \StringTok{"Source Sans Pro"}\NormalTok{) }\OperatorTok{+}
+\StringTok{   }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{subtitle =} \StringTok{"Using Source Sans Pro"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -311,7 +312,8 @@ With FONTS!
 
 \begin{Shaded}
 \begin{Highlighting}[]
-\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{(}\DataTypeTok{base_family =} \StringTok{"Roboto Condensed"}\NormalTok{)}
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_minimal}\NormalTok{(}\DataTypeTok{base_family =} \StringTok{"Roboto Condensed"}\NormalTok{) }\OperatorTok{+}
+\StringTok{   }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{subtitle =} \StringTok{"Using Roboto Condense"}\NormalTok{)}
 \end{Highlighting}
 \end{Shaded}
 
@@ -319,6 +321,37 @@ With FONTS!
 \centering
 \includegraphics{bookdown-debugging_files/figure-latex/plotting-1-3.pdf}
 \caption{\label{fig:plotting-1-3}A plot.}
+\end{figure}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{library}\NormalTok{(hrbrthemes)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## NOTE: Either Arial Narrow or Roboto Condensed fonts are required to use these themes.
+\end{verbatim}
+
+\begin{verbatim}
+##       Please use hrbrthemes::import_roboto_condensed() to install Roboto Condensed and
+\end{verbatim}
+
+\begin{verbatim}
+##       if Arial Narrow is not on your system, please see https://bit.ly/arialnarrow
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p }\OperatorTok{+}\StringTok{ }\KeywordTok{theme_ipsum_rc}\NormalTok{() }\OperatorTok{+}
+\StringTok{   }\KeywordTok{labs}\NormalTok{(}\DataTypeTok{subtitle =} \StringTok{"Using hrbrthemes::theme_ipsum_rc()"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{figure}
+\centering
+\includegraphics{bookdown-debugging_files/figure-latex/plotting-1-4.pdf}
+\caption{\label{fig:plotting-1-4}A plot.}
 \end{figure}
 
 \hypertarget{math}{%
@@ -333,8 +366,10 @@ Display style with two dollar signs:
 \hypertarget{using-environments}{%
 \subsubsection{Using environments}\label{using-environments}}
 
+Below should be a set of equations using an \texttt{align} environment. If not, I still don't understand MathJax.
+
 \begin{align}
-\mathbb{E}( \widehat{\boldsymbol{\beta}}) 
+\mathbb{E}(\widehat{\boldsymbol{\beta}}) 
 &= \mathbb{E}\left( \left(\boldsymbol{X}^T \boldsymbol{X}\right)^{-1} \boldsymbol{X}^T \boldsymbol{Y} \right) \\
 &= \mathbb{E}\left( \left(\boldsymbol{X}^T \boldsymbol{X}\right)^{-1} \boldsymbol{X}^T \left(\boldsymbol{X} \boldsymbol{\beta}+ \varepsilon \right) \right) \\
 &= \mathbb{E}\left( 
@@ -401,10 +436,12 @@ Some \emph{significant} applications are demonstrated in this chapter.
 ##  P extrafontdb    1.0     2012-06-11 [?] CRAN (R 4.0.0)              
 ##  P fansi          0.4.1   2020-01-08 [?] CRAN (R 4.0.0)              
 ##  P farver         2.0.3   2020-01-16 [?] CRAN (R 4.0.0)              
+##  P gdtools        0.2.2   2020-04-03 [?] CRAN (R 4.0.0)              
 ##  P ggplot2      * 3.3.0   2020-03-05 [?] CRAN (R 4.0.0)              
 ##    glue           1.4.0   2020-04-03 [1] CRAN (R 4.0.0)              
 ##  P gtable         0.3.0   2019-03-25 [?] CRAN (R 4.0.0)              
 ##  P highr          0.8     2019-03-20 [?] CRAN (R 4.0.0)              
+##  P hrbrthemes   * 0.8.0   2020-03-06 [?] CRAN (R 4.0.0)              
 ##  P htmltools      0.4.0   2019-10-04 [?] CRAN (R 4.0.0)              
 ##  P knitr          1.28.7  2020-05-07 [?] Github (yihui/knitr@6907b42)
 ##  P labeling       0.3     2014-08-23 [?] CRAN (R 4.0.0)              
@@ -434,7 +471,7 @@ Some \emph{significant} applications are demonstrated in this chapter.
 ##  P yaml           2.2.1   2020-02-01 [?] CRAN (R 4.0.0)              
 ## 
 ## [1] /home/travis/build/jemus42/bookdown-debugging/renv/library/R-4.0/x86_64-pc-linux-gnu
-## [2] /tmp/Rtmph7LA14/renv-system-library
+## [2] /tmp/RtmpCstHdQ/renv-system-library
 ## 
 ##  P -- Loaded and on-disk path mismatch.
 \end{verbatim}
