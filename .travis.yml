@@ -36,7 +36,7 @@ before_install:
     fi
   - "$TRAVIS_BUILD_DIR/bin/get_adobe_fonts.sh"
   - |
-    # Copy fontconfig for possibly maybe xelatex font issue with spaces in font names
+    # Copy fontconfig for possibly maybe xelatex font issue with not finding fonts
     cp $HOME/.TinyTeX/texmf-var/fonts/conf/texlive-fontconfig.conf ~/.fonts.conf
   - |
     # 4. Update font cache for previously installed fonts (+ list fonts for debugging)

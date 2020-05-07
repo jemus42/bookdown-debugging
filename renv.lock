@@ -221,10 +221,15 @@
     },
     "knitr": {
       "Package": "knitr",
-      "Version": "1.28",
-      "Source": "Repository",
-      "Repository": "CRAN",
-      "Hash": "915a6f0134cdbdf016d7778bc80b2eda"
+      "Version": "1.28.7",
+      "Source": "GitHub",
+      "RemoteType": "github",
+      "RemoteHost": "api.github.com",
+      "RemoteUsername": "yihui",
+      "RemoteRepo": "knitr",
+      "RemoteRef": "master",
+      "RemoteSha": "6907b428572c130982f6b3d6c91a164a15b94a30",
+      "Hash": "d7705a78e9149bacdda5421fd7609528"
     },
     "labeling": {
       "Package": "labeling",
@@ -345,6 +350,13 @@
       "Repository": "CRAN",
       "Hash": "98777535b61c57d1749344345e2a4ccd"
     },
+    "ragg": {
+      "Package": "ragg",
+      "Version": "0.1.5",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "55ecadf0808546b2d1e8a06b1658a787"
+    },
     "renv": {
       "Package": "renv",
       "Version": "0.10.0",
@@ -400,6 +412,13 @@
       "Source": "Repository",
       "Repository": "CRAN",
       "Hash": "0759e6b6c0957edb1311028a49a35e76"
+    },
+    "systemfonts": {
+      "Package": "systemfonts",
+      "Version": "0.2.1",
+      "Source": "Repository",
+      "Repository": "CRAN",
+      "Hash": "b9cbe1031f93e8d06e36a330705c654f"
     },
     "testthat": {
       "Package": "testthat",

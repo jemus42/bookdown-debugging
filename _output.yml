@@ -1,5 +1,6 @@
 bookdown::gitbook:
   df_print: kable
+  dev: "ragg_png"
   css: includes/style.css
   toc_depth: 4
   split_by: chapter

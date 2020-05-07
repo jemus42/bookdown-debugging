@@ -9,12 +9,11 @@ library(extrafont) # For fontstuff
 
 # for PDF output
 loadfonts()
+fonttable()
 
-fonttab <- fonttable()
-
-fonttab <- fonttab[c("FullName", "FamilyName", "FontName", "fontfile")]
-
-knitr::kable(fonttab, booktabs = TRUE, caption = "Fonts extrafont knows about")
+# using ragg for png
+# loading just for renv to pick it up
+library(ragg)
 ```
 
 
