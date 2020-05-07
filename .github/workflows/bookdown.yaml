@@ -58,11 +58,12 @@ jobs:
           brew cask install font-source-code-pro
           brew cask install font-source-sans-pro
           brew cask install font-source-serif-pro
+          cp $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf $HOME/.fonts.conf
           fc-cache -fv
           # fc-list|grep Source
           fc-match source
           fc-match roboto
-          cat $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf
+          # cat $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf
 
       - name: Build GitBook
         run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
