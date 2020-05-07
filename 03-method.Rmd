@@ -4,6 +4,20 @@
 
 With FONTS!
 
+```{r fontprep}
+library(extrafont) # For fontstuff
+
+# for PDF output
+loadfonts()
+
+fonttab <- fonttable()
+
+fonttab <- fonttab[grepl("Source", fonttab$FamilyName), c("FullName", "FamilyName", "FontName", "fontfile")]
+
+knitr::kable(fonttab, booktabs = TRUE, caption = "Matching fonts")
+```
+
+
 ```{r plotting-1, fig.cap="A plot."}
 library(ggplot2)
 
