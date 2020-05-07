@@ -48,13 +48,13 @@ jobs:
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
 
-       - name: Install tinytex
-         uses: r-lib/actions/setup-tinytex@v1
+      - name: Install tinytex
+        uses: r-lib/actions/setup-tinytex@v1
 
-       - name: Install system dependencies
-         run: |
-           brew install cairo
-           brew cask install xquartz
+      - name: Install system dependencies
+        run: |
+          brew install cairo
+          brew cask install xquartz
 
       - name: Install fonts
         run: |
