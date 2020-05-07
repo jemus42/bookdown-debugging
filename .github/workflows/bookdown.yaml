@@ -22,9 +22,15 @@ jobs:
       - name: Cache Renv packages
         uses: actions/cache@v1
         with:
-          path: $HOME/.local/share/renv
-          key: r-${{ hashFiles('renv.lock') }}
-          restore-keys: r-
+          path: ~/.local/share/renv
+          key: renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: renv-
+
+      - name: Install packages
+        run: |
+          R -e 'install.packages("renv")'
+          R -e 'renv::consent(provided = TRUE)'
+          R -e 'renv::restore()'
 
       # - name: Cache TinyTex
       #   uses: actions/cache@v1
@@ -39,11 +45,6 @@ jobs:
           path: _bookdown_files
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
-
-      - name: Install packages
-        run: |
-          R -e 'install.packages("renv")'
-          R -e 'renv::restore()'
 
       - name: Install tinytex
         uses: r-lib/actions/setup-tinytex@v1
