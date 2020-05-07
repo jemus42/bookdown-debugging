@@ -29,8 +29,9 @@ jobs:
       - name: Install packages
         run: |
           R -e 'install.packages("renv")'
-          R -e 'renv::consent(provided = TRUE)'
           R -e 'renv::restore()'
+          echo 'renv::paths$cache()'
+          R -e 'renv::paths$cache()'
 
       # - name: Cache TinyTex
       #   uses: actions/cache@v1
@@ -46,8 +47,8 @@ jobs:
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
 
-      - name: Install tinytex
-        uses: r-lib/actions/setup-tinytex@v1
+      # - name: Install tinytex
+      #   uses: r-lib/actions/setup-tinytex@v1
 
       - name: Install system dependencies
         run: |
@@ -66,7 +67,6 @@ jobs:
           # Apparently only helps XeLaTeX to find texlive fonts, not system fonts
           cp $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf $HOME/.fonts.conf
           fc-cache -fv
-          # fc-list
           fc-list -f "%{family}\n" | sort -u
           echo running texhash
           texhash
