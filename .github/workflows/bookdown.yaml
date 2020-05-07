@@ -61,16 +61,16 @@ jobs:
           brew tap homebrew/cask-fonts
           brew cask install font-roboto
           brew cask install font-roboto-condensed
-      #     brew cask install font-source-code-pro
-      #     brew cask install font-source-sans-pro
-      #     brew cask install font-source-serif-pro
-      #     echo Copy texlive-fontconfig.conf to ~/.fonts/conf
-      #     # Apparently only helps XeLaTeX to find texlive fonts, not system fonts
-      #     cp $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf $HOME/.fonts.conf
-      #     fc-cache -fv
-      #     fc-list -f "%{family}\n" | sort -u
-      #     echo running texhash
-      #     texhash
+          #     brew cask install font-source-code-pro
+          #     brew cask install font-source-sans-pro
+          #     brew cask install font-source-serif-pro
+          #     echo Copy texlive-fontconfig.conf to ~/.fonts/conf
+          #     # Apparently only helps XeLaTeX to find texlive fonts, not system fonts
+          #     cp $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf $HOME/.fonts.conf
+          #     fc-cache -fv
+          #     fc-list -f "%{family}\n" | sort -u
+          #     echo running texhash
+          #     texhash
 
       - name: Build GitBook
         run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
