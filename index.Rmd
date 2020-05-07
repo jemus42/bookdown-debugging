@@ -11,12 +11,12 @@ biblio-style: apalike
 link-citations: yes
 colorlinks: true
 papersize: a4
-mainfont: "Source Serif Pro"
-sansfont: "Source Sans Pro"
-monofont: "Source Code Pro"
-monofontoptions:
-  - Mapping=tex-ansi
-  - Scale=0.8
+# mainfont: "Source Serif Pro"
+# sansfont: "Source Sans Pro"
+# monofont: "Source Code Pro"
+# monofontoptions:
+#   - Mapping=tex-ansi
+#   - Scale=0.8
 #mathfont: "Asana Math"
 always_allow_html: yes
 links-as-notes: yes

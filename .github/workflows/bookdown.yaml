@@ -48,19 +48,19 @@ jobs:
           key: bookdown-${{ hashFiles('**/*Rmd') }}
           restore-keys: bookdown-
 
-      # - name: Install tinytex
-      #   uses: r-lib/actions/setup-tinytex@v1
+       - name: Install tinytex
+         uses: r-lib/actions/setup-tinytex@v1
 
-      # - name: Install system dependencies
-      #   run: |
-      #     brew install cairo
-      #     brew cask install xquartz
-      #
-      # - name: Install fonts
-      #   run: |
-      #     brew tap homebrew/cask-fonts
-      #     brew cask install font-roboto
-      #     brew cask install font-roboto-condensed
+       - name: Install system dependencies
+         run: |
+           brew install cairo
+           brew cask install xquartz
+
+      - name: Install fonts
+        run: |
+          brew tap homebrew/cask-fonts
+          brew cask install font-roboto
+          brew cask install font-roboto-condensed
       #     brew cask install font-source-code-pro
       #     brew cask install font-source-sans-pro
       #     brew cask install font-source-serif-pro
@@ -75,8 +75,8 @@ jobs:
       - name: Build GitBook
         run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
 
-      # - name: Build PDF
-      #   run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book", quiet = TRUE)'
+      - name: Build PDF
+        run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book", quiet = TRUE)'
 
       # - name: Install npm
       #   uses: actions/setup-node@v1
