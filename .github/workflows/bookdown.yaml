@@ -60,16 +60,13 @@ jobs:
           brew cask install font-source-serif-pro
           cp $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf $HOME/.fonts.conf
           fc-cache -fv
-          # fc-list|grep Source
-          fc-match source
-          fc-match roboto
-          # cat $(kpsewhich -var-value TEXMFSYSVAR)/fonts/conf/texlive-fontconfig.conf
+          fc-list
 
       - name: Build GitBook
         run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
 
-      - name: Build PDF
-        run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book", quiet = TRUE)'
+      # - name: Build PDF
+      #   run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::pdf_book", quiet = TRUE)'
 
       - name: Install npm
         uses: actions/setup-node@v1
