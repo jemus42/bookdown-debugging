@@ -14,7 +14,7 @@ fonttab <- fonttable()
 
 fonttab <- fonttab[c("FullName", "FamilyName", "FontName", "fontfile")]
 
-knitr::kable(fonttab, booktabs = TRUE, caption = "Matching fonts")
+knitr::kable(fonttab, booktabs = TRUE, caption = "Fonts extrafont knows about")
 ```
 
 
@@ -35,6 +35,9 @@ p <- ggplot(iris, aes(x = Species, y = Sepal.Length, color = Species, fill = Spe
 p + theme_minimal()
 
 p + theme_minimal(base_family = "Source Sans Pro")
+
+p + theme_minimal(base_family = "Roboto Condensed")
+
 ```
 
 
