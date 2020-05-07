@@ -1,6 +1,6 @@
 # bookdown-debugging
 
-![Travis (.org)](https://img.shields.io/travis/jemus42/bookdown-debugging?logo=travis)
+[![Travis (.org)](https://img.shields.io/travis/jemus42/bookdown-debugging?logo=travis)](https://travis-ci.org/github/jemus42/bookdown-debugging)
 [![Netlify Status](https://api.netlify.com/api/v1/badges/7a277574-aa48-44e2-be9b-c4a6bbc5f8db/deploy-status)](https://app.netlify.com/sites/jemus42-bookdown-debugging/deploys)
 
 This is a minimal example of a book based on R Markdown and **bookdown** (https://github.com/rstudio/bookdown).   
