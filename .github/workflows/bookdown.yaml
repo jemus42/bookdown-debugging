@@ -1,8 +1,9 @@
 on:
   push:
     branches: master
-
 name: bookdown
+env:
+  RENV_PATHS_ROOT: ~/.local/share/renv
 
 jobs:
   build:
@@ -19,19 +20,19 @@ jobs:
           brew install pandoc
           brew install pandoc-citeproc
 
-      - name: Cache Renv packages
+      - name: Cache packages
         uses: actions/cache@v1
         with:
-          path: ~/.local/share/renv
-          key: renv-${{ hashFiles('**/renv.lock') }}
-          restore-keys: renv-
+          path: ${{ env.RENV_PATHS_ROOT }}
+          key: ${{ runner.os }}-renv-${{ hashFiles('**/renv.lock') }}
+          restore-keys: |
+            ${{ runner.os }}-renv-
 
-      - name: Install packages
+      - name: Restore packages
+        shell: Rscript {0}
         run: |
-          R -e 'install.packages("renv")'
-          R -e 'renv::restore()'
-          echo 'renv::paths$cache()'
-          R -e 'renv::paths$cache()'
+          if (!requireNamespace("renv", quietly = TRUE)) install.packages("renv")
+          renv::restore()
 
       # - name: Cache TinyTex
       #   uses: actions/cache@v1
