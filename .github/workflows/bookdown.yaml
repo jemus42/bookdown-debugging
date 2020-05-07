@@ -68,6 +68,8 @@ jobs:
           fc-cache -fv
           # fc-list
           fc-list -f "%{family}\n" | sort -u
+          echo running texhash
+          texhash
 
       - name: Build GitBook
         run: Rscript -e 'bookdown::render_book("index.Rmd", output_format = "bookdown::gitbook", quiet = TRUE)'
